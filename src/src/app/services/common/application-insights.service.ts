@@ -3,6 +3,7 @@ import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 import { ActivatedRouteSnapshot, ResolveEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ApplicationInsightsService {
 
   private appInsights = new ApplicationInsights({
     config: {
-      instrumentationKey: '...'
+      instrumentationKey: environment.instrumentationKey
     }
   });
 
